@@ -64,8 +64,28 @@ nav{
 
 /* LOGO */
 
+.logo{
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+}
+
 .logo img{
-  width:170px;
+  width:180px;
+}
+
+/* LOGO TEXT */
+
+.logo span{
+  color:white;
+
+  font-size:16px;
+  font-weight:bold;
+
+  letter-spacing:3px;
+
+  white-space:nowrap;
 }
 
 /* MENU */
@@ -204,8 +224,8 @@ SECTION
 
     .shop-header p{
       opacity:0.6;
-      font-size:14px;
-      letter-spacing:2px;
+      font-size:12px;
+      letter-spacing:1px;
     }
 
     /* =========================
@@ -284,7 +304,7 @@ SECTION
     }
 
     .product-price{
-      font-size:13px;
+      font-size:18px;
       opacity:0.7;
 
       margin-bottom:18px;
@@ -428,56 +448,66 @@ footer{
 
   letter-spacing:2px;
 }
-    /* =========================
-        MOBILE
-    ========================= */
+  /* MOBILE NAVBAR */
 
-    @media(max-width:1100px){
+@media(max-width:768px){
 
-      .shop-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
+  nav{
+    height:85px;
 
-    }
+    padding:0 20px;
+  }
 
-    @media(max-width:768px){
+  /* LOGO */
 
-      nav{
-        padding:20px;
-      }
+  .logo{
+    gap:px;
+  }
 
-      nav ul{
-        gap:15px;
-      }
+  .logo img{
+    width:120px;
+  }
 
-      nav ul li a{
-        font-size:10px;
-      }
+  .logo span{
+    font-size:10px;
 
-      .logo{
-        font-size:13px;
-      }
+    letter-spacing:2px;
+  }
 
-      .shop-header{
-        padding-top:140px;
-      }
+  /* MENU */
 
-      .shop-header h1{
-        font-size:32px;
-        letter-spacing:4px;
-      }
+  nav ul{
+    gap:18px;
+  }
 
-      .shop-grid{
-        grid-template-columns:1fr;
+  nav ul li a{
+    font-size:10px;
+  }
 
-        padding:0 20px 100px;
-      }
 
-      .product-image img{
-        height:420px;
-      }
+  /* SHOP */
 
-    }
+  .shop-header{
+    padding-top:140px;
+  }
+
+  .shop-header h1{
+    font-size:32px;
+
+    letter-spacing:1px;
+  }
+
+  .shop-grid{
+    grid-template-columns:1fr;
+
+    padding:0 20px 100px;
+  }
+
+  .product-image img{
+    height:420px;
+  }
+
+}
 
 </style>
 
@@ -605,12 +635,12 @@ alt="logo"
       <div class="product-image">
 
         <img
-          src="images/baju3.png"
+          src="images/cflogo3.png"
           class="main-img"
         >
 
         <img
-          src="images/baju3cf.png"
+          src="images/cflogo3p.png"
           class="hover-img"
         >
 
