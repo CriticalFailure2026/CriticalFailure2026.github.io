@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DAMAGED THE SYSTEM T-SHIRT</title>
+
+<style>
+
+/* =========================
+RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Helvetica, Arial, sans-serif;
+  background:#fff;
+  color:#111;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:110px;
+
+  background:#000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 70px;
+
+  border-bottom:2px solid #000;
+
+  z-index:99999;
+}
+
+/* LOGO */
+
+.logo img{
+  width:170px;
+}
+
+/* MENU */
+
+nav ul{
+  display:flex;
+  list-style:none;
+
+  gap:50px;
+}
+
+nav ul li a{
+  color:white;
+
+  font-size:13px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  opacity:0.6;
+}
+
+/* =========================
+PRODUCT PAGE
+========================= */
+
+.product-page{
+  width:100%;
+
+  padding:150px 60px 100px;
+
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+
+  gap:60px;
+
+  border-bottom:2px solid #000;
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.gallery{
+  width:100%;
+}
+
+/* MAIN IMAGE */
+
+.main-image{
+  width:100%;
+  height:850px;
+
+  overflow:hidden;
+
+  background:#f5f5f5;
+}
+
+.main-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+/* THUMBNAIL */
+
+.thumbnail-grid{
+  margin-top:20px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:15px;
+}
+
+.thumbnail{
+  height:150px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  border:1px solid rgba(0,0,0,0.08);
+}
+
+.thumbnail img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:0.3s;
+}
+
+.thumbnail:hover img{
+  transform:scale(1.05);
+}
+
+/* =========================
+PRODUCT INFO
+========================= */
+
+.product-info{
+  padding-top:20px;
+}
+
+/* TITLE */
+
+.product-title{
+  font-size:42px;
+  font-weight:bold;
+
+  letter-spacing:4px;
+
+  margin-bottom:20px;
+}
+
+/* PRICE */
+
+.product-price{
+  font-size:22px;
+  font-weight:bold;
+
+  margin-bottom:35px;
+}
+
+/* DESCRIPTION */
+
+.product-desc{
+  font-size:14px;
+
+  line-height:2;
+
+  opacity:0.75;
+
+  margin-bottom:40px;
+}
+
+/* =========================
+SIZE
+========================= */
+
+.size-title{
+  font-size:13px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  margin-bottom:18px;
+}
+
+.size-grid{
+  display:flex;
+
+  gap:12px;
+
+  margin-bottom:40px;
+}
+
+.size-btn{
+  width:60px;
+  height:60px;
+
+  border:1px solid rgba(0,0,0,0.12);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:13px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.size-btn:hover{
+  background:black;
+  color:white;
+}
+
+.size-btn.active{
+  background:black;
+  color:white;
+}
+
+/* =========================
+QUANTITY
+========================= */
+
+.qty-title{
+  font-size:13px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  margin-bottom:18px;
+}
+
+.qty-box{
+  width:150px;
+  height:58px;
+
+  border:1px solid rgba(0,0,0,0.12);
+
+  display:flex;
+  align-items:center;
+
+  margin-bottom:40px;
+}
+
+.qty-btn{
+  width:50px;
+  height:58px;
+
+  border:none;
+
+  background:white;
+
+  font-size:20px;
+
+  cursor:pointer;
+}
+
+.qty-number{
+  flex:1;
+
+  text-align:center;
+
+  font-size:15px;
+  font-weight:bold;
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.buy-btn{
+  width:100%;
+  height:68px;
+
+  border:none;
+
+  background:black;
+  color:white;
+
+  font-size:13px;
+  font-weight:bold;
+
+  letter-spacing:3px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  margin-bottom:15px;
+}
+
+.buy-btn:hover{
+  opacity:0.85;
+}
+
+.cart-btn{
+  width:100%;
+  height:68px;
+
+  border:1px solid rgba(0,0,0,0.12);
+
+  background:white;
+
+  font-size:13px;
+  font-weight:bold;
+
+  letter-spacing:3px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.cart-btn:hover{
+  background:black;
+  color:white;
+}
+
+/* =========================
+DETAILS
+========================= */
+
+.details{
+  margin-top:50px;
+
+  border-top:1px solid rgba(0,0,0,0.08);
+
+  padding-top:40px;
+}
+
+.details h3{
+  font-size:14px;
+
+  letter-spacing:2px;
+
+  margin-bottom:25px;
+}
+
+.details ul{
+  padding-left:18px;
+}
+
+.details ul li{
+  margin-bottom:14px;
+
+  font-size:14px;
+
+  opacity:0.75;
+
+  line-height:1.8;
+}
+
+/* =========================
+ACCORDION
+========================= */
+
+.accordion{
+  margin-top:50px;
+
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+.accordion-item{
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.accordion-header{
+  width:100%;
+
+  padding:22px 0;
+
+  background:none;
+  border:none;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  cursor:pointer;
+
+  font-size:13px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+}
+
+.accordion-content{
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:0.4s ease;
+
+  opacity:0.7;
+
+  font-size:14px;
+
+  line-height:2;
+}
+
+.accordion-content.active{
+  max-height:700px;
+
+  padding-bottom:25px;
+}
+
+/* SIZE GUIDE IMAGE */
+
+.size-guide-img{
+  width:100%;
+
+  margin-bottom:20px;
+
+  border:1px solid rgba(0,0,0,0.08);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  background:black;
+  color:white;
+
+  text-align:center;
+
+  padding:80px 20px 40px;
+}
+
+/* FOOTER LOGO */
+
+.footer-logo img{
+  width:180px;
+
+  margin:auto;
+  margin-bottom:30px;
+}
+
+/* SOCIALS */
+
+.socials{
+  display:flex;
+  justify-content:center;
+
+  gap:25px;
+
+  margin:40px 0;
+}
+
+.socials a{
+  width:42px;
+  height:42px;
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.socials img{
+  width:18px;
+
+  filter:brightness(0) invert(1);
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  padding-top:30px;
+
+  display:flex;
+  justify-content:center;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+}
+
+.footer-bottom a{
+  color:rgba(255,255,255,0.7);
+
+  font-size:11px;
+
+  letter-spacing:2px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .product-page{
+    grid-template-columns:1fr;
+
+    padding:120px 20px 80px;
+  }
+
+  .main-image{
+    height:500px;
+  }
+
+  .thumbnail{
+    height:90px;
+  }
+
+  .product-title{
+    font-size:28px;
+
+    letter-spacing:2px;
+  }
+
+  nav{
+    height:85px;
+
+    padding:0 20px;
+  }
+
+  .logo img{
+    width:120px;
+  }
+
+  nav ul{
+    gap:15px;
+  }
+
+  nav ul li a{
+    font-size:10px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<a href="index.html" class="logo">
+
+<img
+src="images/logowhites.png"
+alt="logo"
+>
+
+</a>
+
+<ul>
+
+<li><a href="index.html">HOME</a></li>
+
+<li><a href="shop.html">SHOP</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+<!-- PRODUCT PAGE -->
+
+<section class="product-page">
+
+<!-- GALLERY -->
+
+<div class="gallery">
+
+<!-- MAIN IMAGE -->
+
+<div class="main-image">
+
+<img
+id="mainProductImage"
+src="images/baju3.png"
+>
+
+</div>
+
+<!-- THUMBNAIL -->
+
+<div class="thumbnail-grid">
+
+<div class="thumbnail">
+
+<img
+src="images/baju3cf.png"
+onclick="changeImage(this)"
+>
+
+</div>
+
+<div class="thumbnail">
+
+<img
+src="images/baju3cfshirt.png"
+onclick="changeImage(this)"
+>
+
+</div>
+
+<div class="thumbnail">
+
+<img
+src="images/cfpreview1.png"
+onclick="changeImage(this)"
+>
+
+</div>
+
+<div class="thumbnail">
+
+<img
+src="images/baju.png"
+onclick="changeImage(this)"
+>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PRODUCT INFO -->
+
+<div class="product-info">
+
+<h1 class="product-title">
+CRITICAL FAILURE LOGO
+</h1>
+
+<div class="product-price">
+IDR 200.000
+</div>
+
+<div class="product-desc">
+
+Premium heavyweight boxy t-shirt inspired by modern underground streetwear culture.
+
+Made with thick cotton material for maximum comfort and oversized silhouette fit.
+
+</div>
+
+<!-- SIZE -->
+
+<div class="size-title">
+SELECT SIZE
+</div>
+
+<div class="size-grid">
+
+<div class="size-btn">S</div>
+<div class="size-btn">M</div>
+<div class="size-btn active">L</div>
+<div class="size-btn">XL</div>
+
+</div>
+
+<!-- QUANTITY -->
+
+<div class="qty-title">
+QUANTITY
+</div>
+
+<div class="qty-box">
+
+<button class="qty-btn" onclick="minusQty()">
+-
+</button>
+
+<div class="qty-number" id="qty">
+1
+</div>
+
+<button class="qty-btn" onclick="plusQty()">
++
+</button>
+
+</div>
+
+<!-- BUTTON -->
+
+<button class="buy-btn" onclick="buyNow()">
+BUY NOW
+</button>
+
+<button class="cart-btn">
+ADD TO CART
+</button>
+
+<!-- DETAILS -->
+
+<div class="details">
+
+<h3>PRODUCT DETAILS</h3>
+
+<ul>
+
+<li>280gsm heavyweight cotton</li>
+
+<li>Oversized boxy fit</li>
+
+<li>Premium screen print</li>
+
+<li>High quality stitching</li>
+
+<li>Made in Indonesia</li>
+
+</ul>
+
+</div>
+
+<!-- ACCORDION -->
+
+<div class="accordion">
+
+<!-- SHIPPING -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+SHIPPING
+
+<span>+</span>
+
+</button>
+
+<div class="accordion-content">
+
+Worldwide shipping available.<br>
+Orders are processed within 1–3 business days.
+
+</div>
+
+</div>
+
+<!-- SIZE GUIDE -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+SIZE GUIDE
+
+<span>+</span>
+
+</button>
+
+<div class="accordion-content">
+
+<img
+src="images/sizeguide.png"
+class="size-guide-img"
+>
+
+S = Width 54cm / Length 70cm<br>
+M = Width 57cm / Length 73cm<br>
+L = Width 60cm / Length 76cm<br>
+XL = Width 63cm / Length 79cm
+
+</div>
+
+</div>
+
+<!-- WASH CARE -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+WASH CARE
+
+<span>+</span>
+
+</button>
+
+<div class="accordion-content">
+
+Wash cold inside out.<br>
+Do not bleach.<br>
+Do not iron directly on print.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+
+<img
+src="images/logowhites.png"
+alt="logo"
+>
+
+</div>
+
+<p>
+© 2026 Critical Failure. All rights reserved.
+</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/critical.failure2026">
+
+<img
+src="images/logoig.png"
+>
+
+</a>
+
+<a href="https://www.tiktok.com/@critical.failure2026">
+
+<img
+src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+>
+
+</a>
+
+<a href="https://wa.me/6285739635984">
+
+<img
+src="images/logowa.png"
+>
+
+</a>
+
+</div>
+
+<div class="footer-bottom">
+
+<a href="">TERMS</a>
+
+<a href="">SHIPPING POLICY</a>
+
+<a href="">REFUND POLICY</a>
+
+</div>
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+/* CHANGE IMAGE */
+
+function changeImage(element){
+
+document.getElementById("mainProductImage").src =
+element.src;
+
+}
+
+/* SIZE */
+
+const sizeButtons =
+document.querySelectorAll('.size-btn');
+
+sizeButtons.forEach(button => {
+
+button.addEventListener('click', () => {
+
+sizeButtons.forEach(btn =>
+btn.classList.remove('active'));
+
+button.classList.add('active');
+
+});
+
+});
+
+/* QUANTITY */
+
+let quantity = 1;
+
+function plusQty(){
+
+quantity++;
+
+document.getElementById('qty').innerText =
+quantity;
+
+}
+
+function minusQty(){
+
+if(quantity > 1){
+
+quantity--;
+
+document.getElementById('qty').innerText =
+quantity;
+
+}
+
+}
+
+/* BUY NOW */
+
+function buyNow(){
+
+const selectedSize =
+document.querySelector('.size-btn.active').innerText;
+
+const message =
+"Halo saya mau order DAMAGED THE SYSTEM T-SHIRT%0A" +
+"Size: " + selectedSize + "%0A" +
+"Quantity: " + quantity;
+
+window.open(
+"https://wa.me/6285739635984?text=" + message,
+"_blank"
+);
+
+}
+
+/* ACCORDION */
+
+const accordionHeaders =
+document.querySelectorAll('.accordion-header');
+
+accordionHeaders.forEach(header => {
+
+header.addEventListener('click', () => {
+
+const content =
+header.nextElementSibling;
+
+content.classList.toggle('active');
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

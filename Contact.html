@@ -1,136 +1,619 @@
-<!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Damaged System Tee</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">Critical Failure</span>
-								</a>
+<title>Contact - Critical Failure</title>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+<style>
 
-						</div>
-					</header>
+/* =========================
+RESET
+========================= */
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Shop</a></li>
-							<li><a href="brand.html">Brand</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="elements.html"></a></li>
-						</ul>
-					</nav>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Follow us on Instagram</h1>
-							<span class="image main"><img src="images/instagrampost.png" alt="" /></span>
-							<p>
+body{
+  font-family:Helvetica, Arial, sans-serif;
+  background:#fff;
+  color:#111;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:110px;
+
+  background:#000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 70px;
+
+  z-index:99999;
+}
+
+/* LOGO */
+
+.logo img{
+  width:170px;
+}
+
+/* MENU */
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:50px;
+}
+
+nav ul li a{
+  color:white;
+
+  font-size:13px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  opacity:0.6;
+}
+
+/* =========================
+CONTACT PAGE
+========================= */
+
+.contact-page{
+  width:100%;
+
+  padding:190px 20px 120px;
+}
+
+/* TITLE */
+
+.contact-title{
+  text-align:center;
+
+  margin-bottom:90px;
+}
+
+.contact-title h1{
+  font-size:54px;
+
+  letter-spacing:8px;
+
+  margin-bottom:20px;
+}
+
+.contact-title p{
+  font-size:15px;
+
+  opacity:0.6;
+
+  letter-spacing:1px;
+}
+
+/* CONTACT CONTAINER */
+
+.contact-container{
+  max-width:1100px;
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
+}
+
+/* LEFT */
+
+.contact-left h2{
+  font-size:18px;
+
+  letter-spacing:3px;
+
+  margin-bottom:30px;
+}
+
+.contact-left p{
+  line-height:2;
+
+  opacity:0.7;
+
+  margin-bottom:40px;
+}
+
+/* CONTACT INFO */
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+
+  gap:20px;
+}
+
+.contact-box{
+  border:1px solid rgba(0,0,0,0.08);
+
+  padding:25px;
+
+  transition:0.3s;
+}
+
+.contact-box:hover{
+  background:#000;
+  color:white;
+}
+
+.contact-box h3{
+  font-size:13px;
+
+  letter-spacing:2px;
+
+  margin-bottom:10px;
+}
+
+.contact-box p{
+  margin:0;
+
+  font-size:14px;
+
+  opacity:0.7;
+}
+
+/* RIGHT */
+
+.contact-right{
+  border:1px solid rgba(0,0,0,0.08);
+
+  padding:50px;
+}
+
+/* FORM */
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+
+  gap:25px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+
+  border:none;
+  border-bottom:1px solid rgba(0,0,0,0.15);
+
+  padding:18px 0;
+
+  font-size:14px;
+
+  font-family:Helvetica, Arial, sans-serif;
+
+  outline:none;
+
+  resize:none;
+}
+
+.contact-form textarea{
+  height:140px;
+}
+
+/* BUTTON */
+
+.contact-form button{
+  width:100%;
+
+  height:60px;
+
+  border:none;
+
+  background:#000;
+  color:white;
+
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.contact-form button:hover{
+  opacity:0.85;
+}
+
+/* SOCIALS */
+
+.contact-socials{
+  display:flex;
+
+  gap:20px;
+
+  margin-top:40px;
+}
+
+.contact-socials a{
+  width:48px;
+  height:48px;
+
+  background:#000;
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  transition:0.3s;
+}
+
+.contact-socials a:hover{
+  transform:translateY(-3px);
+}
+
+.contact-socials img{
+  width:20px;
+
+  filter:brightness(0) invert(1);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  background:black;
+  color:white;
+
+  text-align:center;
+
+  padding:80px 20px 40px;
+}
+
+/* FOOTER LOGO */
+
+.footer-logo img{
+  width:180px;
+
+  margin:auto;
+  margin-bottom:30px;
+}
+
+/* FOOTER TEXT */
+
+footer p{
+  opacity:0.7;
+
+  margin-bottom:35px;
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  padding-top:30px;
+
+  display:flex;
+  justify-content:center;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+}
+
+.footer-bottom a{
+  color:rgba(255,255,255,0.7);
+
+  font-size:11px;
+
+  letter-spacing:2px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  nav{
+    height:85px;
+
+    padding:0 20px;
+  }
+
+  .logo img{
+    width:120px;
+  }
+
+  nav ul{
+    gap:18px;
+  }
+
+  nav ul li a{
+    font-size:10px;
+  }
+
+  .contact-page{
+    padding:140px 20px 100px;
+  }
+
+  .contact-title h1{
+    font-size:34px;
+
+    letter-spacing:4px;
+  }
+
+  .contact-container{
+    grid-template-columns:1fr;
+
+    gap:40px;
+  }
+
+  .contact-right{
+    padding:30px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<a href="index.html" class="logo">
+
+<img
+src="images/logowhites.png"logo"
+>
+
+</a>
+
+<ul>
+
+<li><a href="index.html">HOME</a></li>
+
+<li><a href="shop.html">SHOP</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+<!-- CONTACT PAGE -->
+
+<section class="contact-page">
+
+<div class="contact-title">
+
+<h1>CONTACT</h1>
+
+<p>
+Need help or have questions? Get in touch with us.
 </p>
-                            <h1><a href="https://www.instagram.com/critical.failure2026/" target="_blank">@Critical Failure 2026</a></p>
-							<p>
-							</p>
-							<p></p>
-						</div>
-					</div>
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1></h1>
-							<span class="image main"><img src="images/.png" alt="" /></span>
-							<p>
+
+</div>
+
+<div class="contact-container">
+
+<!-- LEFT -->
+
+<div class="contact-left">
+
+<h2>GET IN TOUCH</h2>
+
+<p>
+For customer support, order inquiries, collaborations, or general questions, feel free to contact us through WhatsApp or social media.
 </p>
-							<p>
-							</p>
-							<p></p>
-						</div>
-					</div>
-					<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1></h1>
-							<span class="image main"><img src="images/.png" alt="" /></span>
-							<p>
+
+<div class="contact-info">
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/6281234567890"
+target="_blank"
+class="contact-box"
+>
+
+<h3>WHATSAPP</h3>
+
+<p>
++62 812-3456-7890
 </p>
-							<p>
-							</p>
-							<p></p>
-						</div>
-					</div>
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Sign up for exclusive Critical Failure news, products and discounts.</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								
-								<h2>Contac Us</h2>
-								<ul class="icons">
-<li><a href="https://www.instagram.com/critical.failure2026/" target="_blank" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-								
-									<li><a href="https://wa.me/6285739635984" target="_blank" class="icon brands style2 fa-whatsapp"><span class="label">Phone</span></a></li>
-									<li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=criticalfailure@gmail.com" target="_blank" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; 2026 Critical Failure. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
 
-			</div>
+</a>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<!-- EMAIL -->
 
-	</body>
+<div class="contact-box">
+
+<h3>EMAIL</h3>
+<div class="socials">	
+	<a href="mailto:criticalxfailure@gmail.com">
+</div>
+<p>
+criticalxfailure@email.com
+</p>
+
+
+</div>
+
+<!-- INSTAGRAM -->
+
+<a
+href="https://www.instagram.com/critical.failure2026/"
+target="_blank"
+class="contact-box"
+>
+
+<h3>INSTAGRAM</h3>
+
+<p>
+@criticalfailure
+</p>
+
+</a>
+
+<!-- TIKTOK -->
+
+<a
+href="https://www.tiktok.com/@critical.failure2026?_r=1&_t=ZS-96VnQN6hhoO="_blank"
+class="contact-box"
+>
+
+<h3>TIKTOK</h3>
+
+<p>
+@criticalfailure2026
+</p>
+
+</a>
+
+</div>
+
+<!-- SOCIALS -->
+
+<div class="contact-socials">
+
+<!-- INSTAGRAM -->
+
+<a
+href="https://www.instagram.com/critical.failure2026/"
+target="_blank"
+>
+
+<img
+src="images/logoig.png"
+>
+
+</a>
+
+<!-- TIKTOK -->
+
+<a
+href="https://www.tiktok.com/@critical.failure2026?_r=1&_t=ZS-96VnQN6hhoO"
+target="_blank"
+>
+
+<img
+src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+>
+
+</a>
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/6281234567890"
+target="_blank"
+>
+
+<img
+src="images/logowa.png"
+>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="contact-right">
+
+<form class="contact-form">
+
+<input
+type="text"
+placeholder="NAME"
+required
+>
+
+<input
+type="email"
+placeholder="EMAIL"
+required
+>
+
+<textarea
+placeholder="MESSAGE"
+required
+></textarea>
+
+<button type="submit">
+SEND MESSAGE
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+
+<img
+src="images/logowhite2.png"
+alt="logo"
+>
+
+</div>
+
+<p>
+© 2026 Critical Failure. All rights reserved.
+</p>
+
+</footer>
+
+</body>
 </html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop - Critical Failure</title>
+
+  <!-- FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Helvetica, Arial, sans-serif;
+      background:#fff;
+      color:#111;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:110px;
+
+  background:#000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 70px;
+
+  z-index:99999;
+}
+
+/* LOGO */
+
+.logo img{
+  width:170px;
+}
+
+/* MENU */
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:50px;
+}
+
+nav ul li a{
+  color:white;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  opacity:0.6;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  width:100%;
+  height:100vh;
+
+  margin-top:110px;
+}
+
+.heroSwiper{
+  width:100%;
+  height:100%;
+}
+
+.swiper-slide{
+  position:relative;
+}
+
+.hero-image{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+/* OVERLAY */
+
+.hero-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  z-index:10;
+
+  opacity:0;
+
+  transition:0.4s ease;
+}
+/* SHOW TEXT ON HOVER */
+
+.swiper-slide:hover .hero-overlay{
+  opacity:1;
+}
+
+/* HERO LOGO */
+
+.hero-logo{
+  width:650px;
+  max-width:90%;
+
+  margin-bottom:30px;
+
+  filter:brightness(0) invert(1);
+}
+
+.hero-overlay p{
+  color:white;
+
+  font-size:18px;
+  font-weight:bold;
+
+  letter-spacing:5px;
+
+  margin-bottom:30px;
+
+  text-shadow:
+  0 0 10px rgba(0,0,0,0.5);
+}
+/* =========================
+SECTION
+========================= */
+
+.section-title{
+  text-align:center;
+
+  padding-top:120px;
+
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:40px;
+  letter-spacing:8px;
+}
+    /* =========================
+        HEADER
+    ========================= */
+
+    .shop-header{
+      padding-top:170px;
+      padding-bottom:80px;
+
+      text-align:center;
+    }
+
+    .shop-header h1{
+      font-size:58px;
+      letter-spacing:10px;
+
+      margin-bottom:20px;
+    }
+
+    .shop-header p{
+      opacity:0.6;
+      font-size:14px;
+      letter-spacing:2px;
+    }
+
+    /* =========================
+        GRID
+    ========================= */
+
+    .shop-grid{
+      width:100%;
+
+      padding:0 60px 120px;
+
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+
+      gap:25px;
+    }
+
+    /* =========================
+        PRODUCT
+    ========================= */
+
+    .product-card{
+      position:relative;
+      overflow:hidden;
+
+      background:#f7f7f7;
+
+      display:block;
+    }
+
+    .product-image{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .product-image img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+    }
+
+    /* FOTO 2 */
+
+    .hover-img{
+      position:absolute;
+      top:0;
+      left:0;
+
+      opacity:0;
+
+      transition:0.35s;
+    }
+
+    /* HOVER */
+
+    .product-card:hover .hover-img{
+      opacity:1;
+    }
+
+    .product-card:hover .main-img{
+      opacity:0;
+    }
+
+    /* INFO */
+
+    .product-info{
+      padding:22px;
+    }
+
+    .product-title{
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:2px;
+
+      margin-bottom:10px;
+    }
+
+    .product-price{
+      font-size:13px;
+      opacity:0.7;
+
+      margin-bottom:18px;
+    }
+
+    .product-btn{
+      display:inline-block;
+
+      padding:12px 22px;
+
+      background:black;
+      color:white;
+
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:2px;
+    }
+
+/* =========================
+FAQ
+========================= */
+
+.faq{
+  padding:40px 20px 120px;
+}
+
+.faq-container{
+  max-width:900px;
+  margin:auto;
+}
+
+.faq-item{
+  border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+.faq-question{
+  width:100%;
+
+  background:none;
+  border:none;
+
+  text-align:left;
+
+  padding:28px 0;
+
+  font-size:14px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  cursor:pointer;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+
+  transition:0.3s ease;
+
+  opacity:0.7;
+
+  line-height:1.8;
+}
+
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding-bottom:25px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  background:black;
+  color:white;
+
+  text-align:center;
+
+  padding:80px 20px 40px;
+}
+
+/* FOOTER LOGO */
+
+.footer-logo img{
+  width:180px;
+
+  margin:auto;
+  margin-bottom:30px;
+}
+
+/* SOCIALS */
+
+.socials{
+  display:flex;
+  justify-content:center;
+
+  gap:25px;
+
+  margin:40px 0;
+}
+
+.socials a{
+  width:42px;
+  height:42px;
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.socials img{
+  width:18px;
+
+  filter:brightness(0) invert(1);
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  padding-top:30px;
+
+  display:flex;
+  justify-content:center;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+}
+
+.footer-bottom a{
+  color:rgba(255,255,255,0.7);
+
+  font-size:11px;
+
+  letter-spacing:2px;
+}
+    /* =========================
+        MOBILE
+    ========================= */
+
+    @media(max-width:1100px){
+
+      .shop-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        padding:20px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+
+      nav ul li a{
+        font-size:10px;
+      }
+
+      .logo{
+        font-size:13px;
+      }
+
+      .shop-header{
+        padding-top:140px;
+      }
+
+      .shop-header h1{
+        font-size:32px;
+        letter-spacing:4px;
+      }
+
+      .shop-grid{
+        grid-template-columns:1fr;
+
+        padding:0 20px 100px;
+      }
+
+      .product-image img{
+        height:420px;
+      }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<a href="index.html" class="logo">
+
+<img
+src="images/logowhites.png"
+alt="logo"
+>
+
+</a>
+
+<ul>
+
+<li><a href="index.html">HOME</a></li>
+
+<li><a href="shop.html">SHOP</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+
+  <!-- HEADER -->
+
+  <section class="shop-header">
+
+    <h1>ALL PRODUCTS</h1>
+
+    <p>
+      CRITICAL FAILURE | UNDERGROUND STREETWEAR BRAND FROM BALI INDONESIA.
+    </p>
+
+  </section>
+
+  <!-- SHOP -->
+
+  <section class="shop-grid">
+
+    <!-- PRODUCT 1 -->
+
+    <a href="product-tee.html" class="product-card">
+
+      <div class="product-image">
+
+        <img
+          src="images/baju.png"main-img"
+        >
+
+        <img
+          src="images/bajuskull2.png"
+          class="hover-img"
+        >
+
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-title">
+          DAMAGED THE SYSTEM T-SHIRT
+        </div>
+
+        <div class="product-price">
+          IDR 200.000
+        </div>
+
+        <div class="product-btn">
+          VIEW PRODUCT
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- PRODUCT 2 -->
+
+    <a href="product-hoodie.html" class="product-card">
+
+      <div class="product-image">
+
+        <img
+          src="images/baju2.png"class="main-img"
+        >
+
+        <img
+          src="images/baju2fullspeed2.png"class="hover-img"
+        >
+
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-title">
+          FULL SPEED INTO DESTRUCION
+        </div>
+
+        <div class="product-price">
+          IDR 200.000
+        </div>
+
+        <div class="product-btn">
+          VIEW PRODUCT
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- PRODUCT 3 -->
+
+    <a href="product-jacket.html" class="product-card">
+
+      <div class="product-image">
+
+        <img
+          src="images/baju3.png"
+          class="main-img"
+        >
+
+        <img
+          src="images/baju3cf.png"
+          class="hover-img"
+        >
+
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-title">
+          CRITICAL FAILURE LOGO
+        </div>
+
+        <div class="product-price">
+          IDR 200.000
+        </div>
+
+        <div class="product-btn">
+          VIEW PRODUCT
+        </div>
+
+      </div>
+
+    </a>
+
+      </div>
+
+    </a>
+
+  </section>
+
+</body>
+</html>
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<div class="footer-logo">
+
+<img
+src="images/logowhite.png"logo"
+>
+
+</div>
+
+<p>
+© 2026 Critical Failure. All rights reserved.
+</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/critical.failure2026?igsh=YXMzNTFtZmkyZzh0">
+
+<img
+src="images/logoig.png"
+>
+
+</a>
+
+<a href="https://www.tiktok.com/@critical.failure2026?_r=1&_t=ZS-96VnQN6hhoO" target="_blank">
+
+<img
+src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+>
+
+</a>
+
+<a href="https://wa.me/6285739635984">
+
+<img
+src="images/logowa.png"
+>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+new Swiper('.heroSwiper', {
+
+loop:true,
+
+autoplay:{
+delay:3000,
+disableOnInteraction:false,
+},
+
+pagination:{
+el:'.swiper-pagination',
+clickable:true,
+},
+
+navigation:{
+nextEl:'.swiper-button-next',
+prevEl:'.swiper-button-prev',
+},
+
+});

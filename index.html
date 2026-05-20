@@ -1,146 +1,789 @@
-<!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Shop</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">Critical Failure</span>
-								</a>
+<title>Critical Failure</title>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 
-						</div>
-					</header>
+<style>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Shop</a></li>
-							<li><a href="Brand.html">Brand</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="elements.html"></a></li>
-						</ul>
-					</nav>
+/* =========================
+RESET
+========================= */
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-								<h1>T-Shirt<br /></h1>
-                                <p> </p>
-								<p></p>
-							</header>
-							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src="images/baju.png" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Damaged System Tee</h2>
-										<div class="content">
-											<p>Boxy Tee. 16S Cotton Combed</p>
-									</div>
-										</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/baju2.png" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Crashed Car</h2>
-										<div class="content">
-											<p>Boxy Tee. 16S Cotton Combed</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/baju3.png" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>CF Logo</h2>
-										<div class="content">
-											<p>Boxy Tee. 16S Cotton Combed</p>
-										</div>
-									</a>
-								</article>
-						
-							</section>
-						</div>
-					</div>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Sign up for exclusive Critical Failure news, products and discounts.</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Contact Us</h2>
-								<ul class="icons">
-									
-									
-									<li><a href="https://www.instagram.com/critical.failure2026/" target="_blank" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-								
-									<li><a href="https://wa.me/6285739635984" target="_blank" class="icon brands style2 fa-whatsapp"><span class="label">Phone</span></a></li>
-									<li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=criticalfailure@gmail.com" target="_blank" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; 2026 Critical Failure. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+body{
+  font-family:Helvetica, Arial, sans-serif;
+  background:#fff;
+  color:#111;
+  overflow-x:hidden;
+}
 
-			</div>
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+img{
+  width:100%;
+  display:block;
+}
 
-	</body>
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:110px;
+
+  background:#000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 70px;
+
+  z-index:99999;
+}
+
+/* LOGO */
+
+.logo img{
+  width:170px;
+}
+
+/* MENU */
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:50px;
+}
+
+nav ul li a{
+  color:white;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  opacity:0.6;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  width:100%;
+  height:100vh;
+
+  margin-top:110px;
+}
+
+.heroSwiper{
+  width:100%;
+  height:100%;
+}
+
+.swiper-slide{
+  position:relative;
+}
+
+.hero-image{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+/* OVERLAY */
+
+.hero-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  z-index:10;
+
+  opacity:0;
+
+  transition:0.4s ease;
+}
+
+/* SHOW TEXT ON HOVER */
+
+.swiper-slide:hover .hero-overlay{
+  opacity:1;
+}
+
+/* HERO LOGO */
+
+.hero-logo{
+  width:650px;
+  max-width:90%;
+
+  margin-bottom:30px;
+
+  filter:brightness(0) invert(1);
+}
+
+.hero-overlay p{
+  color:white;
+
+  font-size:18px;
+  font-weight:bold;
+
+  letter-spacing:5px;
+
+  margin-bottom:30px;
+
+  text-shadow:
+  0 0 10px rgba(0,0,0,0.5);
+}
+
+/* BUTTON */
+
+.btn{
+  background:white;
+  color:black;
+
+  padding:15px 40px;
+
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:black;
+  color:white;
+}
+
+/* SWIPER */
+
+.swiper-button-next,
+.swiper-button-prev{
+  color:white !important;
+}
+
+.swiper-pagination-bullet{
+  background:white !important;
+}
+
+/* BUTTON */
+
+.btn{
+  background:white;
+  color:black;
+
+  padding:15px 40px;
+
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:black;
+  color:white;
+}
+
+/* SWIPER */
+
+.swiper-button-next,
+.swiper-button-prev{
+  color:white !important;
+}
+
+.swiper-pagination-bullet{
+  background:white !important;
+}
+/* =========================
+SECTION
+========================= */
+
+.section-title{
+  text-align:center;
+
+  padding-top:120px;
+
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:40px;
+  letter-spacing:8px;
+}
+
+/* =========================
+PRODUCTS
+========================= */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:30px;
+
+  padding:0 60px 120px;
+}
+
+.product{
+  position:relative;
+  overflow:hidden;
+}
+
+.product img{
+  width:100%;
+  height:500px;
+
+  object-fit:cover;
+}
+
+/* SECOND IMAGE */
+
+.hover-img{
+  position:absolute;
+  top:0;
+  left:0;
+
+  opacity:0;
+
+  transition:0.3s;
+}
+
+.product:hover .hover-img{
+  opacity:1;
+}
+
+.product:hover .main-img{
+  opacity:0;
+}
+
+/* PRODUCT INFO */
+
+.product-info{
+  position:absolute;
+  bottom:0;
+  left:0;
+
+  width:100%;
+
+  padding:30px;
+
+  background:linear-gradient(
+    transparent,
+    rgba(0,0,0,0.9)
+  );
+
+  color:white;
+}
+
+.product-info h3{
+  margin-bottom:10px;
+
+  font-size:18px;
+}
+
+.product-info p{
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* =========================
+FAQ
+========================= */
+
+.faq{
+  padding:40px 20px 120px;
+}
+
+.faq-container{
+  max-width:900px;
+  margin:auto;
+}
+
+.faq-item{
+  border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+.faq-question{
+  width:100%;
+
+  background:none;
+  border:none;
+
+  text-align:left;
+
+  padding:28px 0;
+
+  font-size:14px;
+  font-weight:bold;
+
+  letter-spacing:2px;
+
+  cursor:pointer;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+
+  transition:0.3s ease;
+
+  opacity:0.7;
+
+  line-height:1.8;
+}
+
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding-bottom:25px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  background:black;
+  color:white;
+
+  text-align:center;
+
+  padding:80px 20px 40px;
+}
+
+/* FOOTER LOGO */
+
+.footer-logo img{
+  width:180px;
+
+  margin:auto;
+  margin-bottom:30px;
+}
+
+/* SOCIALS */
+
+.socials{
+  display:flex;
+  justify-content:center;
+
+  gap:25px;
+
+  margin:40px 0;
+}
+
+.socials a{
+  width:42px;
+  height:42px;
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.socials img{
+  width:18px;
+
+  filter:brightness(0) invert(1);
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  padding-top:30px;
+
+  display:flex;
+  justify-content:center;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+}
+
+.footer-bottom a{
+  color:rgba(255,255,255,0.7);
+
+  font-size:11px;
+
+  letter-spacing:2px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  nav{
+    height:85px;
+    padding:0 20px;
+  }
+
+  .logo img{
+    width:120px;
+  }
+
+  nav ul{
+    gap:18px;
+  }
+
+  nav ul li a{
+    font-size:10px;
+  }
+
+  .hero{
+    margin-top:85px;
+  }
+
+  .hero-overlay{
+    opacity:1;
+  }
+
+  .hero-logo{
+    width:300px;
+  }
+
+  .hero-overlay p{
+    font-size:12px;
+    letter-spacing:3px;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+
+    padding:0 20px 100px;
+  }
+
+  .product img{
+    height:420px;
+  }
+
+  .section-title h2{
+    font-size:28px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<a href="index.html" class="logo">
+
+<img
+src="images/logowhites.png"
+alt="logo"
+>
+
+</a>
+
+<ul>
+
+<li><a href="index.html">HOME</a></li>
+
+<li><a href="shop.html">SHOP</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="swiper heroSwiper">
+
+<div class="swiper-wrapper">
+
+<!-- SLIDE 1 -->
+
+<div class="swiper-slide">
+
+<img
+src="images/cfbrand1.jpg"hero-image"
+>
+
+<div class="hero-overlay">
+
+<img
+src="images/logowhiteinner2.png"
+class="hero-logo"
+>
+
+<p>CRITICAL FAILURE</p>
+
+<a href="shop.html" class="btn">
+SHOP NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- SLIDE 2 -->
+
+<div class="swiper-slide">
+
+<img
+src="images/instagrampost.png"hero-image"
+>
+
+<div class="hero-overlay">
+
+<img
+src="images/logowhite2.png"
+class="hero-logo"
+>
+
+<p>CRITICAL FAILURE</p>
+
+<a href="shop.html" class="btn">
+SHOP NOW
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section>
+
+<div class="section-title">
+<h2>ALL PRODUCTS</h2>
+</div>
+
+<div class="products">
+
+<a href="product-tee.html" class="product">
+
+<img
+src="images/baju.png"main-img"
+>
+
+<img
+src="images/bajuskull2.png"
+class="hover-img"
+>
+
+<div class="product-info">
+
+<h3>DAMAGED THE SYSTEM</h3>
+
+<p>Premium heavyweight Boxy fit.</p>
+
+</div>
+
+</a>
+
+<a href="product-hoodie.html" class="product">
+
+<img
+src="images/baju2.png"main-img"
+>
+
+<img
+src="images/baju2fullspeed2.png"
+class="hover-img"
+>
+
+<div class="product-info">
+
+<h3>FULL SPEED INTO DESTRUCTION</h3>
+
+<p>Premium heavyweight Boxy fit.</p>
+
+</div>
+
+</a>
+
+<a href="product-jacket.html" class="product">
+
+<img
+src="images/baju3.png"main-img"
+>
+
+<img
+src="images/baju3cf.png"
+class="hover-img"
+>
+
+<div class="product-info">
+
+<h3>CRITICAL FAILURE LOGO</h3>
+
+<p>Premium heavyweight Boxy fit.</p>
+
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<div class="footer-logo">
+
+<img
+src="images/logowhite.png"logo"
+>
+
+</div>
+
+<p>
+© 2026 Critical Failure. All rights reserved.
+</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/critical.failure2026?igsh=YXMzNTFtZmkyZzh0">
+
+<img
+src="images/logoig.png"
+>
+
+</a>
+
+<a href="https://www.tiktok.com/@critical.failure2026?_r=1&_t=ZS-96VnQN6hhoO" target="_blank">
+
+<img
+src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+>
+
+</a>
+
+<a href="https://wa.me/6285739635984">
+
+<img
+src="images/logowa.png"
+>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+new Swiper('.heroSwiper', {
+
+loop:true,
+
+autoplay:{
+delay:3000,
+disableOnInteraction:false,
+},
+
+pagination:{
+el:'.swiper-pagination',
+clickable:true,
+},
+
+navigation:{
+nextEl:'.swiper-button-next',
+prevEl:'.swiper-button-prev',
+},
+
+});
+
+/* FAQ */
+
+const faqItems =
+document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+const button =
+item.querySelector('.faq-question');
+
+button.addEventListener('click', () => {
+
+item.classList.toggle('active');
+
+});
+
+});
+
+</script>
+
+</body>
 </html>
